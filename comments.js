@@ -1,24 +1,14 @@
-// Create a web server using Node.js and Express
-const express = require('express');
-const app = express();
+// Create a web server
+const http = require('http');
+
 const port = 3000;
 
-// Define a route for the root URL
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello from GitHub Copilot!\n');
 });
 
-// Handle GET requests to /comments
-app.get('/comments', (req, res) => {
-    const comments = [
-        { id: 1, text: 'This is the first comment.' },
-        { id: 2, text: 'This is the second comment.' },
-        { id: 3, text: 'This is the third comment.' }
-    ];
-    res.json(comments);
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-});
