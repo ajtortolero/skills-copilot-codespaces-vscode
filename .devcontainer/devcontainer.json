@@ -1,0 +1,16 @@
+{
+  "name": "skills-copilot-codespaces-vscode",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.vscode-pull-request-github",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
